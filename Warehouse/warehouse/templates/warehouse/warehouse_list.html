@@ -1,0 +1,15 @@
+{% extends 'warehouse/base.html' %}
+
+{% block content %}
+    {% for warhouse in warehouses %}
+        <div>
+            <div class="post">
+                <h2><a href="{% url 'warehouse_products' pk=warhouse.pk %}">{{ warhouse.name }}</a></h2>
+                <p>Dodane przez: <b>{{ warhouse.owner }}</b></p>
+                <div class="date">
+                    <p>Utworzono: {{ warhouse.created_date }}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

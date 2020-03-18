@@ -1,0 +1,10 @@
+{%  extends 'warehouse/base.html' %}
+
+{% block content %}
+    <div>
+        <div class="post">
+            <h2>{{ product.name }}</h2>
+            <p>Rozmiar: <b>{{ product.quantity }}</b> {{ product.unit.name }}</p>
+        </div>
+    </div>
+{% endblock %}

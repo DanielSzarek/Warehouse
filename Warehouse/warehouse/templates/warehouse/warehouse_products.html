@@ -1,0 +1,35 @@
+{% extends 'warehouse/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="flowLeft">
+            <h2>{{ warehouse.name }}</h2>
+            <table>
+                <tr>
+                    <th><b>Artykuł</b></th>
+                    <th><b>Ilość</b></th>
+                    <th><b>Ważność</b></th>
+                    <th><b>Akcje</b></th>
+                </tr>
+                {% for product in warehouse_products %}
+                    <tr>
+                        <td>{{ product.product.name }} {{ product.quantity }}{{ product.product.unit }}</td>
+                        <td>{{ product.product.quantity }}</td>
+                        <td>{{ product.exp_date }}</td>
+                        <td><button class="btn btn-success">Zwiększ</button> <button class="btn btn-warning">Zmniejsz</button> <button class="btn btn-danger">Usuń</button></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="flowRight">
+            <h2>Produkty</h2>
+            <table>
+                <tr>
+                    <th><b>Nazwa</b></th>
+                    <th><b>Wielkość</b></th>
+                    <th><b>Jednostka</b></th>
+                </tr>
+            </table>
+        </div>
+    </div>
+{% endblock %}
